@@ -1,0 +1,378 @@
+0  =>  ["<S'>", '°<programa>', 1]
+0  =>  ['<programa>', '°<?php <corpo> ?>', 2]
+
+1  =>  ["<S'>", '<programa>°', 1]
+
+2  =>  ['<programa>', '<?php °<corpo> ?>', 51]
+2  =>  ['<corpo>', '°<dc> <comandos>', 3]
+2  =>  ['<dc>', '°<dc_v> <mais_dc>', 4]
+2  =>  ['<dc>', '°<dc_f> <mais_dc_f>', 5]
+2  =>  ['<dc>', '°λ', 2]
+2  =>  ['<dc_v>', '°$ident <atribuicao_opcional>', 7]
+2  =>  ['<dc_f>', '°function ident <parametros> { <corpo_f> }', 10]
+
+3  =>  ['<corpo>', '<dc> °<comandos>', 52]
+3  =>  ['<comandos>', '°<comando> <mais_comandos>', 22]
+3  =>  ['<comando>', '°echo $ident . PHP_EOL;', 24]
+3  =>  ['<comando>', '°if ( <condicao> ) { <comandos> } <pfalsa>', 25]
+3  =>  ['<comando>', '°while ( <condicao> ) { <comandos> }', 26]
+3  =>  ['<comando>', '°$ident <restoIdent> ;', 27]
+
+4  =>  ['<dc>', '<dc_v> °<mais_dc>', 53]
+4  =>  ['<mais_dc>', '°<dc>', 6]
+4  =>  ['<mais_dc>', '°λ', 4]
+4  =>  ['<dc>', '°<dc_v> <mais_dc>', 4]
+4  =>  ['<dc>', '°<dc_f> <mais_dc_f>', 5]
+4  =>  ['<dc>', '°λ', 2]
+4  =>  ['<dc_v>', '°$ident <atribuicao_opcional>', 7]
+4  =>  ['<dc_f>', '°function ident <parametros> { <corpo_f> }', 10]
+
+5  =>  ['<dc>', '<dc_f> °<mais_dc_f>', 113]
+5  =>  ['<mais_dc_f>', '°<dc_f>', 114]
+5  =>  ['<mais_dc_f>', '°λ', 5]
+5  =>  ['<dc_f>', '°function ident <parametros> { <corpo_f> }', 10]
+
+6  =>  ['<mais_dc>', '<dc>°', 6]
+
+7  =>  ['<dc_v>', '$ident °<atribuicao_opcional>', 54]
+7  =>  ['<atribuicao_opcional>', '°= <expressao> ;', 8]
+7  =>  ['<atribuicao_opcional>', '°;', 9]
+
+8  =>  ['<atribuicao_opcional>', '= °<expressao> ;', 55]
+8  =>  ['<expressao>', '°<termo> <outros_termos>', 37]
+8  =>  ['<expressao>', '°floatval(readline());', 38]
+8  =>  ['<termo>', '°<op_un> <fator> <mais_fatores>', 39]
+8  =>  ['<op_un>', '°-', 40]
+8  =>  ['<op_un>', '°λ', 8]
+
+9  =>  ['<atribuicao_opcional>', ';°', 9]
+
+10  =>  ['<dc_f>', 'function °ident <parametros> { <corpo_f> }', 56]
+
+11  =>  ['<parametros>', '( °<lista_par> )', 57]
+11  =>  ['<lista_par>', '°$ident <mais_par>', 13]
+
+12  =>  ['<parametros>', '( °)', 58]
+
+13  =>  ['<lista_par>', '$ident °<mais_par>', 59]
+13  =>  ['<mais_par>', '°, $ident <mais_par>', 14]
+13  =>  ['<mais_par>', '°λ', 13]
+
+14  =>  ['<mais_par>', ', °$ident <mais_par>', 60]
+
+15  =>  ['<corpo_f>', '<dc_loc> °<comandos>', 61]
+15  =>  ['<comandos>', '°<comando> <mais_comandos>', 22]
+15  =>  ['<comando>', '°echo $ident . PHP_EOL;', 24]
+15  =>  ['<comando>', '°if ( <condicao> ) { <comandos> } <pfalsa>', 25]
+15  =>  ['<comando>', '°while ( <condicao> ) { <comandos> }', 26]
+15  =>  ['<comando>', '°$ident <restoIdent> ;', 27]
+
+16  =>  ['<dc_loc>', '<dc_v> °<mais_dcloc>', 62]
+16  =>  ['<mais_dcloc>', '°<dc_loc>', 17]
+16  =>  ['<mais_dcloc>', '°λ', 16]
+16  =>  ['<dc_loc>', '°<dc_v> <mais_dcloc>', 16]
+16  =>  ['<dc_loc>', '°λ', 16]
+16  =>  ['<dc_v>', '°$ident <atribuicao_opcional>', 7]
+
+17  =>  ['<mais_dcloc>', '<dc_loc>°', 17]
+
+18  =>  ['<lista_arg>', '( °<argumentos> )', 63]
+18  =>  ['<argumentos>', '°<expressao> <mais_ident>', 20]
+18  =>  ['<expressao>', '°<termo> <outros_termos>', 37]
+18  =>  ['<expressao>', '°floatval(readline());', 38]
+18  =>  ['<termo>', '°<op_un> <fator> <mais_fatores>', 39]
+18  =>  ['<op_un>', '°-', 40]
+18  =>  ['<op_un>', '°λ', 18]
+
+19  =>  ['<lista_arg>', '( °)', 58]
+
+20  =>  ['<argumentos>', '<expressao> °<mais_ident>', 64]
+20  =>  ['<mais_ident>', '°, <expressao> <mais_ident>', 21]
+20  =>  ['<mais_ident>', '°λ', 20]
+
+21  =>  ['<mais_ident>', ', °<expressao> <mais_ident>', 65]
+21  =>  ['<expressao>', '°<termo> <outros_termos>', 37]
+21  =>  ['<expressao>', '°floatval(readline());', 38]
+21  =>  ['<termo>', '°<op_un> <fator> <mais_fatores>', 39]
+21  =>  ['<op_un>', '°-', 40]
+21  =>  ['<op_un>', '°λ', 21]
+
+22  =>  ['<comandos>', '<comando> °<mais_comandos>', 66]
+22  =>  ['<mais_comandos>', '°<comandos>', 23]
+22  =>  ['<mais_comandos>', '°λ', 22]
+22  =>  ['<comandos>', '°<comando> <mais_comandos>', 22]
+22  =>  ['<comando>', '°echo $ident . PHP_EOL;', 24]
+22  =>  ['<comando>', '°if ( <condicao> ) { <comandos> } <pfalsa>', 25]
+22  =>  ['<comando>', '°while ( <condicao> ) { <comandos> }', 26]
+22  =>  ['<comando>', '°$ident <restoIdent> ;', 27]
+
+23  =>  ['<mais_comandos>', '<comandos>°', 23]
+
+24  =>  ['<comando>', 'echo °$ident . PHP_EOL;', 67]
+
+25  =>  ['<comando>', 'if °( <condicao> ) { <comandos> } <pfalsa>', 68]
+
+26  =>  ['<comando>', 'while °( <condicao> ) { <comandos> }', 69]
+
+27  =>  ['<comando>', '$ident °<restoIdent> ;', 70]
+27  =>  ['<restoIdent>', '°= <expressao>', 28]
+27  =>  ['<restoIdent>', '°<lista_arg>', 29]
+27  =>  ['<lista_arg>', '°( <argumentos> )', 18]
+27  =>  ['<lista_arg>', '°( )', 19]
+
+28  =>  ['<restoIdent>', '= °<expressao>', 71]
+28  =>  ['<expressao>', '°<termo> <outros_termos>', 37]
+28  =>  ['<expressao>', '°floatval(readline());', 38]
+28  =>  ['<termo>', '°<op_un> <fator> <mais_fatores>', 39]
+28  =>  ['<op_un>', '°-', 40]
+28  =>  ['<op_un>', '°λ', 28]
+
+29  =>  ['<restoIdent>', '<lista_arg>°', 29]
+
+30  =>  ['<condicao>', '<expressao> °<relacao> <expressao>', 72]
+30  =>  ['<relacao>', '°==', 31]
+30  =>  ['<relacao>', '°!=', 32]
+30  =>  ['<relacao>', '°>=', 33]
+30  =>  ['<relacao>', '°<=', 34]
+30  =>  ['<relacao>', '°>', 35]
+30  =>  ['<relacao>', '°<', 36]
+
+31  =>  ['<relacao>', '==°', 31]
+
+32  =>  ['<relacao>', '!=°', 32]
+
+33  =>  ['<relacao>', '>=°', 33]
+
+34  =>  ['<relacao>', '<=°', 34]
+
+35  =>  ['<relacao>', '>°', 35]
+
+36  =>  ['<relacao>', '<°', 36]
+
+37  =>  ['<expressao>', '<termo> °<outros_termos>', 73]
+37  =>  ['<outros_termos>', '°<op_ad> <termo> <outros_termos>', 44]
+37  =>  ['<outros_termos>', '°λ', 37]
+37  =>  ['<op_ad>', '°+', 45]
+37  =>  ['<op_ad>', '°-', 46]
+
+38  =>  ['<expressao>', 'floatval(readline());°', 38]
+
+39  =>  ['<termo>', '<op_un> °<fator> <mais_fatores>', 74]
+39  =>  ['<fator>', '°$ident', 41]
+39  =>  ['<fator>', '°numero_real', 42]
+39  =>  ['<fator>', '°( <expressao> )', 43]
+
+40  =>  ['<op_un>', '-°', 40]
+
+41  =>  ['<fator>', '$ident°', 41]
+
+42  =>  ['<fator>', 'numero_real°', 42]
+
+43  =>  ['<fator>', '( °<expressao> )', 75]
+43  =>  ['<expressao>', '°<termo> <outros_termos>', 37]
+43  =>  ['<expressao>', '°floatval(readline());', 38]
+43  =>  ['<termo>', '°<op_un> <fator> <mais_fatores>', 39]
+43  =>  ['<op_un>', '°-', 40]
+43  =>  ['<op_un>', '°λ', 43]
+
+44  =>  ['<outros_termos>', '<op_ad> °<termo> <outros_termos>', 76]
+44  =>  ['<termo>', '°<op_un> <fator> <mais_fatores>', 39]
+44  =>  ['<op_un>', '°-', 40]
+44  =>  ['<op_un>', '°λ', 44]
+
+45  =>  ['<op_ad>', '+°', 45]
+
+46  =>  ['<op_ad>', '-°', 46]
+
+47  =>  ['<mais_fatores>', '<op_mul> °<fator> <mais_fatores>', 77]
+47  =>  ['<fator>', '°$ident', 41]
+47  =>  ['<fator>', '°numero_real', 42]
+47  =>  ['<fator>', '°( <expressao> )', 43]
+
+48  =>  ['<op_mul>', '*°', 48]
+
+49  =>  ['<op_mul>', '/°', 49]
+
+50  =>  ['<pfalsa>', 'else °{ <comandos> }', 78]
+
+51  =>  ['<programa>', '<?php <corpo> °?>', 79]
+
+52  =>  ['<corpo>', '<dc> <comandos>°', 52]
+
+53  =>  ['<dc>', '<dc_v> <mais_dc>°', 53]
+
+54  =>  ['<dc_v>', '$ident <atribuicao_opcional>°', 54]
+
+55  =>  ['<atribuicao_opcional>', '= <expressao> °;', 80]
+
+56  =>  ['<dc_f>', 'function ident °<parametros> { <corpo_f> }', 81]
+56  =>  ['<parametros>', '°( <lista_par> )', 11]
+56  =>  ['<parametros>', '°( )', 12]
+
+57  =>  ['<parametros>', '( <lista_par> °)', 82]
+
+58  =>  ['<parametros>', '( )°', 58]
+
+59  =>  ['<lista_par>', '$ident <mais_par>°', 59]
+
+60  =>  ['<mais_par>', ', $ident °<mais_par>', 83]
+60  =>  ['<mais_par>', '°, $ident <mais_par>', 14]
+60  =>  ['<mais_par>', '°λ', 60]
+
+61  =>  ['<corpo_f>', '<dc_loc> <comandos>°', 61]
+
+62  =>  ['<dc_loc>', '<dc_v> <mais_dcloc>°', 62]
+
+63  =>  ['<lista_arg>', '( <argumentos> °)', 84]
+
+64  =>  ['<argumentos>', '<expressao> <mais_ident>°', 64]
+
+65  =>  ['<mais_ident>', ', <expressao> °<mais_ident>', 85]
+65  =>  ['<mais_ident>', '°, <expressao> <mais_ident>', 21]
+65  =>  ['<mais_ident>', '°λ', 65]
+
+66  =>  ['<comandos>', '<comando> <mais_comandos>°', 66]
+
+67  =>  ['<comando>', 'echo $ident °. PHP_EOL;', 86]
+
+68  =>  ['<comando>', 'if ( °<condicao> ) { <comandos> } <pfalsa>', 87]
+68  =>  ['<condicao>', '°<expressao> <relacao> <expressao>', 30]
+68  =>  ['<expressao>', '°<termo> <outros_termos>', 37]
+68  =>  ['<expressao>', '°floatval(readline());', 38]
+68  =>  ['<termo>', '°<op_un> <fator> <mais_fatores>', 39]
+68  =>  ['<op_un>', '°-', 40]
+68  =>  ['<op_un>', '°λ', 68]
+
+69  =>  ['<comando>', 'while ( °<condicao> ) { <comandos> }', 88]
+69  =>  ['<condicao>', '°<expressao> <relacao> <expressao>', 30]
+69  =>  ['<expressao>', '°<termo> <outros_termos>', 37]
+69  =>  ['<expressao>', '°floatval(readline());', 38]
+69  =>  ['<termo>', '°<op_un> <fator> <mais_fatores>', 39]
+69  =>  ['<op_un>', '°-', 40]
+69  =>  ['<op_un>', '°λ', 69]
+
+70  =>  ['<comando>', '$ident <restoIdent> °;', 89]
+
+71  =>  ['<restoIdent>', '= <expressao>°', 71]
+
+72  =>  ['<condicao>', '<expressao> <relacao> °<expressao>', 90]
+72  =>  ['<expressao>', '°<termo> <outros_termos>', 37]
+72  =>  ['<expressao>', '°floatval(readline());', 38]
+72  =>  ['<termo>', '°<op_un> <fator> <mais_fatores>', 39]
+72  =>  ['<op_un>', '°-', 40]
+72  =>  ['<op_un>', '°λ', 72]
+
+73  =>  ['<expressao>', '<termo> <outros_termos>°', 73]
+
+74  =>  ['<termo>', '<op_un> <fator> °<mais_fatores>', 91]
+74  =>  ['<mais_fatores>', '°<op_mul> <fator> <mais_fatores>', 47]
+74  =>  ['<mais_fatores>', '°λ', 74]
+74  =>  ['<op_mul>', '°*', 48]
+74  =>  ['<op_mul>', '°/', 49]
+
+75  =>  ['<fator>', '( <expressao> °)', 92]
+
+76  =>  ['<outros_termos>', '<op_ad> <termo> °<outros_termos>', 93]
+76  =>  ['<outros_termos>', '°<op_ad> <termo> <outros_termos>', 44]
+76  =>  ['<outros_termos>', '°λ', 76]
+76  =>  ['<op_ad>', '°+', 45]
+76  =>  ['<op_ad>', '°-', 46]
+
+77  =>  ['<mais_fatores>', '<op_mul> <fator> °<mais_fatores>', 94]
+77  =>  ['<mais_fatores>', '°<op_mul> <fator> <mais_fatores>', 47]
+77  =>  ['<mais_fatores>', '°λ', 77]
+77  =>  ['<op_mul>', '°*', 48]
+77  =>  ['<op_mul>', '°/', 49]
+
+78  =>  ['<pfalsa>', 'else { °<comandos> }', 95]
+78  =>  ['<comandos>', '°<comando> <mais_comandos>', 22]
+78  =>  ['<comando>', '°echo $ident . PHP_EOL;', 24]
+78  =>  ['<comando>', '°if ( <condicao> ) { <comandos> } <pfalsa>', 25]
+78  =>  ['<comando>', '°while ( <condicao> ) { <comandos> }', 26]
+78  =>  ['<comando>', '°$ident <restoIdent> ;', 27]
+
+79  =>  ['<programa>', '<?php <corpo> ?>°', 79]
+
+80  =>  ['<atribuicao_opcional>', '= <expressao> ;°', 80]
+
+81  =>  ['<dc_f>', 'function ident <parametros> °{ <corpo_f> }', 96]
+
+82  =>  ['<parametros>', '( <lista_par> )°', 82]
+
+83  =>  ['<mais_par>', ', $ident <mais_par>°', 83]
+
+84  =>  ['<lista_arg>', '( <argumentos> )°', 84]
+
+85  =>  ['<mais_ident>', ', <expressao> <mais_ident>°', 85]
+
+86  =>  ['<comando>', 'echo $ident . °PHP_EOL;', 110]
+
+87  =>  ['<comando>', 'if ( <condicao> °) { <comandos> } <pfalsa>', 98]
+
+88  =>  ['<comando>', 'while ( <condicao> °) { <comandos> }', 99]
+
+89  =>  ['<comando>', '$ident <restoIdent> ;°', 89]
+
+90  =>  ['<condicao>', '<expressao> <relacao> <expressao>°', 90]
+
+91  =>  ['<termo>', '<op_un> <fator> <mais_fatores>°', 91]
+
+92  =>  ['<fator>', '( <expressao> )°', 92]
+
+93  =>  ['<outros_termos>', '<op_ad> <termo> <outros_termos>°', 93]
+
+94  =>  ['<mais_fatores>', '<op_mul> <fator> <mais_fatores>°', 94]
+
+95  =>  ['<pfalsa>', 'else { <comandos> °}', 100]
+
+96  =>  ['<dc_f>', 'function ident <parametros> { °<corpo_f> }', 101]
+96  =>  ['<corpo_f>', '°<dc_loc> <comandos>', 15]
+96  =>  ['<dc_loc>', '°<dc_v> <mais_dcloc>', 16]
+96  =>  ['<dc_loc>', '°λ', 96]
+96  =>  ['<dc_v>', '°$ident <atribuicao_opcional>', 7]
+
+97  =>  ['<comando>', 'echo $ident . PHP_EOL;°', 97]
+
+98  =>  ['<comando>', 'if ( <condicao> ) °{ <comandos> } <pfalsa>', 102]
+
+99  =>  ['<comando>', 'while ( <condicao> ) °{ <comandos> }', 103]
+
+100  =>  ['<pfalsa>', 'else { <comandos> }°', 100]
+
+101  =>  ['<dc_f>', 'function ident <parametros> { <corpo_f> °}', 104]
+
+102  =>  ['<comando>', 'if ( <condicao> ) { °<comandos> } <pfalsa>', 105]
+102  =>  ['<comandos>', '°<comando> <mais_comandos>', 22]
+102  =>  ['<comando>', '°echo $ident . PHP_EOL;', 24]
+102  =>  ['<comando>', '°if ( <condicao> ) { <comandos> } <pfalsa>', 25]
+102  =>  ['<comando>', '°while ( <condicao> ) { <comandos> }', 26]
+102  =>  ['<comando>', '°$ident <restoIdent> ;', 27]
+
+103  =>  ['<comando>', 'while ( <condicao> ) { °<comandos> }', 106]
+103  =>  ['<comandos>', '°<comando> <mais_comandos>', 22]
+103  =>  ['<comando>', '°echo $ident . PHP_EOL;', 24]
+103  =>  ['<comando>', '°if ( <condicao> ) { <comandos> } <pfalsa>', 25]
+103  =>  ['<comando>', '°while ( <condicao> ) { <comandos> }', 26]
+103  =>  ['<comando>', '°$ident <restoIdent> ;', 27]
+
+104  =>  ['<dc_f>', 'function ident <parametros> { <corpo_f> }°', 104]
+
+105  =>  ['<comando>', 'if ( <condicao> ) { <comandos> °} <pfalsa>', 107]
+
+106  =>  ['<comando>', 'while ( <condicao> ) { <comandos> °}', 108]
+
+107  =>  ['<comando>', 'if ( <condicao> ) { <comandos> } °<pfalsa>', 109]
+107  =>  ['<pfalsa>', '°else { <comandos> }', 50]
+107  =>  ['<pfalsa>', '°λ', 107]
+
+108  =>  ['<comando>', 'while ( <condicao> ) { <comandos> }°', 108]
+
+109  =>  ['<comando>', 'if ( <condicao> ) { <comandos> } <pfalsa>°', 109]
+
+110  =>  ['<comando>', 'echo $ident . PHP_EOL °;', 111]
+
+111  =>  ['<comando>', 'echo $ident . PHP_EOL ;°', 111]
+
+113  =>  ['<dc>', '<dc_f> <mais_dc_f>°', 113]
+
+114  =>  ['<mais_dc_f>', '<dc_f>°', 114]
