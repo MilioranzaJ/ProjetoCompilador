@@ -7,7 +7,7 @@ Implementar um compilador completo (léxico, sintático e semântico) que gere c
 ## Como executar
 1. Abra o terminal na pasta Compilador.
 2. Execute:
-	- `python main.py`
+	 `python main.py`
 3. O arquivo de entrada padrão é entrada/correto.php.txt.
 
 ## Estrutura do projeto
