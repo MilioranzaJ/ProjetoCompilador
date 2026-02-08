@@ -99,3 +99,16 @@ def t_error(t):
     t.lexer.skip(1)
 
 lexer = lex.lex()
+
+def gerar_tokens(codigo_fonte):
+    lexer.input(codigo_fonte)
+    return list(lexer)
+
+def imprimir_tokens(codigo_fonte):
+    tokens_gerados = gerar_tokens(codigo_fonte)
+    if not tokens_gerados:
+        print("nenhum token gerado")
+        return
+    print("\nTOKENS GERADOS:\n")
+    for tok in tokens_gerados:
+        print(f"{tok.type:<12} {tok.value!r} (linha {tok.lineno})")

@@ -2,6 +2,7 @@ import sys
 import os
 from parser.parser import Parser
 from interpretador.interpretador import interpretar_codigo
+from lexer.lexer import imprimir_tokens
 
 def main():
     caminho_arquivo = os.path.join("entrada", "correto.php.txt")
@@ -13,7 +14,8 @@ def main():
         with open(caminho_arquivo, 'r', encoding='utf-8') as arquivo:
             codigo_fonte = arquivo.read()
     
-        print("compilando codigo...")
+        imprimir_tokens(codigo_fonte)
+        print("\ncompilando codigo...")
 
         
         analisador = Parser(codigo_fonte)
