@@ -62,6 +62,22 @@ def t_FLOATVAL_READLINE(t):
     t.value = 'floatval(readline());'
     return t
 
+def t_FLOATVAL_VAR(t):
+    r'floatval\s*\(\s*\$[a-zA-Z_][a-zA-Z0-9_]*\s*\)'
+    inicio = t.value.find('$')
+    fim = inicio + 1
+    while fim < len(t.value) and (t.value[fim].isalnum() or t.value[fim] == '_'):
+        fim += 1
+    t.type = 'VAR'
+    t.value = t.value[inicio:fim] if inicio != -1 else t.value
+    return t
+
+def t_READLINE(t):
+    r'readline\s*\(\s*\)'
+    t.type = 'FLOATVAL'
+    t.value = 'floatval(readline());'
+    return t
+
 def t_VAR(t):
     r'\$[a-zA-Z_][a-zA-Z0-9_]*'
     return t
@@ -70,6 +86,7 @@ def t_NUMERO_REAL(t):
     r'\d+(\.\d+)?'
     t.value = float(t.value)
     return t
+
 def t_IDENT(t):
     r'[a-zA-Z_][a-zA-Z0-9_]*'
     t.type = reserved.get(t.value, 'IDENT') 
