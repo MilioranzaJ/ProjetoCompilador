@@ -136,6 +136,12 @@ class GeradorCodigo:
     def obter_codigo(self):
         return self.codigo
 
+    def salvar_para_arquivo(self, caminho):
+        os.makedirs(os.path.dirname(caminho) or ".", exist_ok=True)
+        with open(caminho, "w", encoding="utf-8") as arquivo:
+            for instrucao in self.codigo:
+                arquivo.write(f"{instrucao}\n")
+
 
 class Parser:
     def __init__(self, codigo):

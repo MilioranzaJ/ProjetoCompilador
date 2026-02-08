@@ -28,6 +28,9 @@ def main():
         print("\ncompilacao bem sucedida")
         
         codigo_intermediario = analisador.gerador.obter_codigo()
+        caminho_codigo_objeto = os.path.join("saida", "codigo_objeto.txt")
+        analisador.gerador.salvar_para_arquivo(caminho_codigo_objeto)
+        print(f"codigo objeto salvo em: {caminho_codigo_objeto}")
         
         print("executando codigo intermedio")
         
@@ -37,7 +40,7 @@ def main():
         resposta = input("deseja executar o programa? (s/n): ").strip().lower()
         
         if resposta == 's':
-            interpretar_codigo(codigo_intermediario)
+            interpretar_codigo(caminho_codigo_objeto)
             print("\nexecucao finalizada")
         else:
             print("\nexecucao pulada pelo usuario")

@@ -239,6 +239,14 @@ class Interpretador:
 
 
 def interpretar_codigo(codigo_lista):
+    if isinstance(codigo_lista, str):
+        try:
+            with open(codigo_lista, "r", encoding="utf-8") as arquivo:
+                codigo_lista = [linha.strip() for linha in arquivo if linha.strip()]
+        except FileNotFoundError:
+            print(f"\narquivo de codigo objeto nao encontrado: {codigo_lista}")
+            return None
+
     interpretador = Interpretador(codigo_lista)
     interpretador.executar()
     return interpretador
